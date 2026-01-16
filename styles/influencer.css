@@ -10,6 +10,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    box-sizing: border-box;
 }
 
 
@@ -226,71 +227,79 @@ footer .icon {
     margin: 17px auto 0;
 }
 
-@media screen and (max-width:576px) {
-    header nav ul {
-        list-style: none;
-        gap: 0.8rem;
-    }
+/* ================= MOBILE RESPONSIVE ================= */
+@media screen and (max-width: 576px) {
 
     .margin-top {
         margin-top: 20px;
     }
 
-    .circle {
-        position: absolute;
-        right: 0px;
-        z-index: -1;
-        width: 100%;
-    }
-
-    .display-flex {
+    header,
+    .hero-container,
+    .featured-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-container {
-        gap: 1.25rem;
-        flex-direction: column-reverse;
-    }
-
-    .hero-details {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .hero-details h2,
-    p {
         text-align: center;
     }
 
+    header nav ul {
+        flex-wrap: wrap;
+        /* ✅ FIX: nav overflow */
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+
+    .hero-details h2,
+    .hero-details p {
+        text-align: center;
+        /* ✅ FIX: wrong selector bug */
+    }
+
+    .circle {
+        width: 100%;
+        right: 0;
+    }
+
     .sponsor-container {
-        max-width: 1110px;
-        margin: 100px auto;
-        padding: 36px 60px;
-        display: grid;
+        width: 100%;
         grid-template-columns: repeat(4, 1fr);
-        align-items: center;
+        /* ✅ FIX: mobile grid */
+        gap: 15px;
+        padding: 0;
+        margin: 50px 0;
+        overflow-x: hidden;
     }
-.collection-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    margin-bottom: 100px;
-}
-    #collection{
-        max-width: 400px;
-        margin: 0 auto;
+     .sponsor-container .img img {
+        max-width: 100%;
     }
-    .featurd-container{
+
+    .collection-container {
+        grid-template-columns: 1fr;
+        /* ✅ FIX: mobile cards */
+        justify-items: center;
+    }
+
+    .featurd-container {
+        /* max-width: 1110px; */
+        /* margin: 0 auto; */
+        /* display: flex; */
+        /* align-items: center; */
+        /* gap: 96px; */
+        /* margin-bottom: 100px; */
         flex-direction: column-reverse;
     }
-    .featured-details{
+
+    .featured-details {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    footer{
+
+    footer {
         padding: 50px 68px;
     }
 }
