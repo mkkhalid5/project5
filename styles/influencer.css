@@ -230,6 +230,9 @@ footer .icon {
 /* ================= MOBILE RESPONSIVE ================= */
 @media screen and (max-width: 576px) {
 
+    body{
+        overflow-x: hidden;
+    }
     .margin-top {
         margin-top: 20px;
     }
@@ -265,16 +268,16 @@ footer .icon {
     }
 
     .sponsor-container {
-        width: 100%;
+        width: 80%;
         grid-template-columns: repeat(4, 1fr);
         /* ✅ FIX: mobile grid */
-        gap: 15px;
+        gap: 0;
         padding: 0;
         margin: 50px 0;
         overflow-x: hidden;
     }
-     .sponsor-container .img img {
-        width: 100%;
+     .sponsor-container .img img{
+        width: 80%;
     }
 
     .collection-container {
